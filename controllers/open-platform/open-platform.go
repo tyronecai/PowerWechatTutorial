@@ -17,6 +17,7 @@ func GetPreAuthorizationUrl(ctx *gin.Context) {
 	a.Create(ctx.Request.Context())
 }
 
+// 获取PreAuthorizationCode，component token会自动缓存
 func APIOpenPlatformPreAuthCode(ctx *gin.Context) {
 	// 如果之前在回调的时候，已经将获取的ComponentVerifyTicket通过SetTicket缓存后，则可以注销代码，跳过这个环节
 	ticket := ctx.Query("ticket")
@@ -30,18 +31,19 @@ func APIOpenPlatformPreAuthCode(ctx *gin.Context) {
 		panic(err)
 	}
 	fmt.Dump(rs)
+	ctx.JSON(200, rs)
 }
 
 func GetFastRegistrationURL(ctx *gin.Context) {
 	// 如果之前在回调的时候，已经将获取的ComponentVerifyTicket通过SetTicket缓存后，则可以注销代码，跳过这个环节
-	ticket, _ := services.OpenPlatformApp.VerifyTicket.GetTicket()
-	if ticket == "" {
-		ticket = ctx.Query("ticket")
-		err := services.OpenPlatformApp.VerifyTicket.SetTicket(ticket)
-		if err != nil {
-			panic(err)
-		}
-	}
+	//ticket, _ := services.OpenPlatformApp.VerifyTicket.GetTicket()
+	//if ticket == "" {
+	//	ticket = ctx.Query("ticket")
+	//	err := services.OpenPlatformApp.VerifyTicket.SetTicket(ticket)
+	//	if err != nil {
+	//		panic(err)
+	//	}
+	//}
 
 	url, err := services.OpenPlatformApp.GetFastRegistrationURL(ctx.Request.Context(), "https://michael.debug.artisancloud.cn/wx/api/openplatform/callback", &object.StringMap{
 		"auth_type": "1",

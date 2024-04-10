@@ -9,6 +9,7 @@ func InitOpenPlatformAPIRoutes(r *gin.Engine) {
 
 	apiRouter := r.Group("/wx/api/openplatform")
 	{
+
 		// auth callback
 		apiRouter.GET("/callback", open_platform.HandleAuthorize)
 		apiRouter.POST("/callback", open_platform.APIOpenPlatformCallback)

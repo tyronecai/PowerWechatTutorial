@@ -5,6 +5,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"net/http"
 	"power-wechat-tutorial/services"
+	"time"
 )
 
 // GetAuthorizerOfficialAccount 获取授权方实例 - 公众号
@@ -59,7 +60,14 @@ func GetAuthorizerMiniProgram(ctx *gin.Context) {
 	if err != nil {
 		panic(err)
 	}
-	ctx.JSON(http.StatusOK, gin.H{"msg": "success", "data": miniProgram})
+	now := time.Now().Add(-5 * 24 * time.Hour)
+
+	from := now.Format(services.DATETIME_FORMAT)
+	to := now.Format(services.DATETIME_FORMAT)
+
+	rs, err := miniProgram.DataCube.GetDailyVisitTrend(ctx.Request.Context(), from, to)
+
+	ctx.JSON(http.StatusOK, gin.H{"msg": "success", "data": rs})
 }
 
 // AuthorizerManage 创建开放平台账号
