@@ -12,6 +12,7 @@ import (
 	"power-wechat-tutorial/services"
 )
 
+// 如果要上生产或者一直使用，需要保证开起推送ticket，在这里接受ticket，PowerWechat会一直帮你缓存最新的ticket。
 func APIOpenPlatformCallback(context *gin.Context) {
 
 	requestXML, _ := io.ReadAll(context.Request.Body)

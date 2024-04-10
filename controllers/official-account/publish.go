@@ -129,7 +129,7 @@ func APIPublishSubmit(ctx *gin.Context) {
 }
 
 func APIPublishGet(ctx *gin.Context) {
-	publishID := ctx.Query("publishID")
+	publishID := ctx.GetUint64("publishID")
 	data, err := services.OfficialAccountApp.Publish.PublishGet(ctx.Request.Context(), publishID)
 	if err != nil {
 		ctx.String(http.StatusBadRequest, err.Error())

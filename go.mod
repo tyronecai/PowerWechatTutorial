@@ -12,15 +12,15 @@ go 1.21
 //replace github.com/ArtisanCloud/PowerSocialite/v3 => ../PowerSocialite
 
 require (
-	github.com/ArtisanCloud/PowerLibs/v3 v3.1.1
-	github.com/ArtisanCloud/PowerWeChat/v3 v3.1.23
+	github.com/ArtisanCloud/PowerLibs/v3 v3.2.1
+	github.com/ArtisanCloud/PowerWeChat/v3 v3.2.6
 	github.com/ArtisanCloud/RobotChat v0.0.0-20230908015013-0e0034f17c6b
 	github.com/gin-contrib/cors v1.4.0
 	github.com/gin-gonic/gin v1.9.1
 	github.com/go-playground/assert/v2 v2.2.0
-	github.com/golang-module/carbon v1.5.5
+	github.com/golang-module/carbon v1.6.0
 	github.com/jinzhu/configor v1.2.1
-	golang.org/x/text v0.10.0
+	golang.org/x/text v0.13.0
 )
 
 require (
@@ -65,9 +65,9 @@ require (
 	go.uber.org/multierr v1.11.0 // indirect
 	go.uber.org/zap v1.25.0 // indirect
 	golang.org/x/arch v0.3.0 // indirect
-	golang.org/x/crypto v0.10.0 // indirect
-	golang.org/x/net v0.11.0 // indirect
-	golang.org/x/sys v0.9.0 // indirect
+	golang.org/x/crypto v0.14.0 // indirect
+	golang.org/x/net v0.17.0 // indirect
+	golang.org/x/sys v0.13.0 // indirect
 	google.golang.org/protobuf v1.30.0 // indirect
 	gopkg.in/natefinch/lumberjack.v2 v2.2.1 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
