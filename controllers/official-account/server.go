@@ -3,7 +3,6 @@ package official_account
 import (
 	"github.com/ArtisanCloud/PowerLibs/v3/fmt"
 	"github.com/ArtisanCloud/PowerLibs/v3/http/helper"
-	"github.com/ArtisanCloud/PowerLibs/v3/object"
 	"github.com/ArtisanCloud/PowerWeChat/v3/src/kernel"
 	"github.com/ArtisanCloud/PowerWeChat/v3/src/kernel/contract"
 	"github.com/ArtisanCloud/PowerWeChat/v3/src/kernel/messages"
@@ -33,6 +32,13 @@ func CallbackVerify(c *gin.Context) {
 // 回调配置
 // https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Receiving_standard_messages.html
 func CallbackNotify(c *gin.Context) {
+
+	//requestXML, _ := io.ReadAll(c.Request.Body)
+	//c.Request.Body = io.NopCloser(bytes.NewBuffer(requestXML))
+	//contentType := c.Request.Header.Get("Content-Type")
+	//
+	//println(contentType)
+	//println(string(requestXML))
 
 	rs, err := services.OfficialAccountApp.Server.Notify(c.Request, func(event contract.EventInterface) interface{} {
 		fmt.Dump("event", event)
@@ -98,17 +104,23 @@ func CallbackNotify(c *gin.Context) {
 		//}
 
 		//return messages.NewText(result.Object)
-		replyData := messages.NewNews([]*object.HashMap{
-			{
-				"title":       "test",
-				"description": "tttttt",
-				"url":         "",
-				"image":       "",
-			},
-		})
+		//replyData := messages.NewNews([]*object.HashMap{
+		//	{
+		//		"Title":       "登录授权",
+		//		"Description": "点此信息登录系统",
+		//		"PicUrl":      "https://file.jhtinfo.net/dedicatedline/temp/4a551a07-df1f-472a-a438-7d41a94f8eb4.png",
+		//		"Url":         "http://www.baidu.com",
+		//	},
+		//	{
+		//		"Title":       "登录授权",
+		//		"Description": "点此信息登录系统",
+		//		"PicUrl":      "https://file.jhtinfo.net/dedicatedline/temp/4a551a07-df1f-472a-a438-7d41a94f8eb4.png",
+		//		"Url":         "http://www.baidu.com",
+		//	},
+		//})
 
-		return replyData
-		//return messages.NewText("ok")
+		//return replyData
+		return messages.NewText("ok")
 
 		//media_id := "JRzcFCs0neDADadmOep2YOszEXI0ZFesCRP75VgIX7UgLzy7Uqk2YeYcwyHtOmAe"
 		//return messages.NewImage(media_id, &power.HashMap{})
