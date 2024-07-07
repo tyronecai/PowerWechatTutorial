@@ -38,6 +38,36 @@ func APISNSSession(c *gin.Context) {
 
 }
 
+func APIResetUserSessionKey(c *gin.Context) {
+
+	sessionKey := "7o91EfeHO4PEnoeVzJxvqw=="
+	openId := "o4QEk5Kc_y8QTrENCpKoxYhS4jkg"
+
+	rs, err := services.MiniProgramApp.Auth.ResetUserSessionKey(c.Request.Context(), openId, sessionKey)
+
+	if err != nil {
+		panic(err)
+	}
+
+	c.JSON(http.StatusOK, rs)
+
+}
+
+func APICheckSession(c *gin.Context) {
+
+	sessionKey := "7o91EfeHO4PEnoeVzJxvqw=="
+	openId := "o4QEk5Kc_y8QTrENCpKoxYhS4jkg"
+
+	rs, err := services.MiniProgramApp.Auth.CheckSession(c.Request.Context(), openId, sessionKey)
+
+	if err != nil {
+		panic(err)
+	}
+
+	c.JSON(http.StatusOK, rs)
+
+}
+
 func APICheckEncryptedData(c *gin.Context) {
 	encryptedData := c.DefaultQuery("encryptedData", "sTWzm26PrbsXlSA8AoW+GpiyNLJP0H5p2UT4dXKwLSvXv8aU4wIiJcZUcM/IzNXnoFtERY3BDRbZh6bwd0ZGENVhucqDPXmchTqseryIZnJiKsiNMHCpAkCA2Yl00q4UpOZYtGMuTX5BTuo1yB3bOOuIfDu6neHV3D158CofGB9m7TxFQ8A/JcauWzhvmEAPygfFaqCgDTEmluLu7S8wMA==")
 	hashByte := sha256.Sum256([]byte(encryptedData))

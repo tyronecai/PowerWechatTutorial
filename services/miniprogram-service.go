@@ -35,7 +35,7 @@ func NewMiniMiniProgramService(conf *config.Configuration) (*miniProgram.MiniPro
 
 		AppKey:  conf.MiniProgram.VirtualPayAppKey,
 		OfferID: conf.MiniProgram.VirtualPayOfferID,
-
+		Http:    miniProgram.Http{},
 		Log: miniProgram.Log{
 			Driver: &testLogDriver.SimpleLogger{},
 			Level:  "debug",

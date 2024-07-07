@@ -10,6 +10,8 @@ func InitMiniProgramAPIRoutes(r *gin.Engine) {
 	{
 		// Handle the auth route
 		routerMiniProgram.GET("/auth", miniprogram.APISNSSession)
+		routerMiniProgram.GET("/auth/checkSession", miniprogram.APICheckSession)
+		routerMiniProgram.GET("/auth/resetUserSessionKey", miniprogram.APIResetUserSessionKey)
 		routerMiniProgram.POST("/auth/checkEncryptedData", miniprogram.APICheckEncryptedData)
 		routerMiniProgram.GET("/auth/getPaidUnionID", miniprogram.APIGetPaidUnionID)
 		routerMiniProgram.GET("/getUserPhoneNumber", miniprogram.GetUserPhoneNumber)

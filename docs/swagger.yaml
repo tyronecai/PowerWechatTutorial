@@ -1,0 +1,46 @@
+basePath: /api/v1
+externalDocs:
+  description: OpenAPI
+  url: https://swagger.io/resources/open-api/
+host: localhost:8080
+info:
+  contact:
+    email: matrix-x@artisan-cloud.como
+    name: ArtisanCloud Support
+    url: https://powerwechat.artisan-cloud.com/zh/start/qa.html
+  description: 这是一个开源的使用教程，包含PowerWechat的大部分接口调试代码.
+  license:
+    name: MIT 2.0
+    url: https://github.com/ArtisanCloud/PowerWeChat?tab=MIT-1-ov-file#readme
+  termsOfService: http://artisan-cloud.com/terms/
+  title: PowerWechat API Docs
+  version: 1.0.1
+paths:
+  /clearQuota:
+    get:
+      description: "\nSDK产品接口的代码展示：\n```\n返回类型定义如下：\ntype ResponseOfficialAccount
+        struct {\n\tResponseBase\n\n\tErrCode int    `json:\"errcode,omitempty\"`\n\tErrMsg
+        \ string `json:\"errmsg,omitempty\"`\n\n\tResultCode string `json:\"resultcode,omitempty\"`\n\tResultMsg
+        \ string `json:\"resultmsg,omitempty\"`\n}\n\n具体使用接口方式：\nfunc ClearQuota(ctx
+        *gin.Context) {\n\tdata, err := services.OfficialAccountApp.Base.ClearQuota(ctx.Request.Context())\n\tif
+        err != nil {\n\t\tctx.String(http.StatusBadRequest, err.Error())\n\t\treturn\n\t}\n\tctx.JSON(http.StatusOK,
+        data)\n}\n```"
+      responses: {}
+      summary: 公众号里清空api的调用quota：https://developers.weixin.qq.com/doc/offiaccount/openApi/clear_quota.html
+      tags:
+      - OfficialAccount.base.ClearQuota
+  /getCallbackIp:
+    get:
+      description: "\nSDK产品接口的代码展示：\n```\n返回类型定义如下：\ntype ResponseGetCallBackIP struct
+        {\n\tresponse.ResponseOfficialAccount\n\n\tIPList []string `json:\"ip_list\"`\n}\n\n具体使用接口方式：\nfunc
+        GetCallbackIP(ctx *gin.Context) {\n\tdata, err := services.OfficialAccountApp.Base.GetCallbackIP(ctx.Request.Context())\n\tif
+        err != nil {\n\t\tctx.String(http.StatusBadRequest, err.Error())\n\t\treturn\n\t}\n\tctx.JSON(http.StatusOK,
+        data)\n}\n```"
+      responses: {}
+      summary: 获取公众号回调的IP地址：https://developers.weixin.qq.com/doc/offiaccount/Basic_Information/Get_the_WeChat_server_IP_address.html
+      tags:
+      - OfficialAccount.base.GetCallbackIP
+securityDefinitions:
+  BasicAuth:
+    type: basic
+swagger: "2.0"

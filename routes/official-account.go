@@ -35,6 +35,7 @@ func InitOfficialAPIRoutes(r *gin.Engine) {
 		// 用户管理
 		officialRouter.GET("/user/get", official_account.GetUserInfo)
 		officialRouter.GET("/user/batchGet", official_account.GetBatchUserInfo)
+		officialRouter.GET("/user/list", official_account.GetUserList)
 		officialRouter.POST("/user/remark", official_account.UserRemark)
 		officialRouter.GET("/user/getBlockList", official_account.GetUserBlacklist)
 		officialRouter.POST("/user/block", official_account.UserBlock)
