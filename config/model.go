@@ -76,7 +76,7 @@ type OpenPlatform struct {
 }
 
 func configFiles() []string {
-	return []string{"config.yml", "/etc/gotify/config.yml"}
+	return []string{"config.yml"}
 }
 
 // Get returns the configuration extracted from env variables or config file.

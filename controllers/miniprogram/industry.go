@@ -144,7 +144,7 @@ func APISubmitAudit(ctx *gin.Context) {
 }
 
 func APIListDramas(ctx *gin.Context) {
-	result, err := services.MiniProgramApp.MiniDramaVOD.GetDramaList(ctx, &request.GetDramaListRequest{})
+	result, err := services.MiniProgramApp.MiniDramaVOD.GetDramaList(ctx, &request.ListRequest{})
 
 	if err != nil {
 		panic(err)

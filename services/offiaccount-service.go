@@ -29,7 +29,7 @@ func NewOfficialAccountAppService(conf *config.Configuration) (*officialAccount.
 		ResponseType: os.Getenv("response_type"),
 		Log: officialAccount.Log{
 			Driver: &testLogDriver.SimpleLogger{},
-			Level:  "error",
+			Level:  "debug",
 			File:   "./wechat.log",
 		},
 		Cache:     cache,

@@ -1,6 +1,7 @@
 package services
 
 import (
+	"github.com/ArtisanCloud/PowerLibs/v3/logger/drivers"
 	"github.com/ArtisanCloud/PowerWeChat/v3/src/kernel"
 	"github.com/ArtisanCloud/PowerWeChat/v3/src/work"
 	"power-wechat-tutorial/config"
@@ -27,6 +28,12 @@ func NewWeComService(conf *config.Configuration) (*work.Work, error) {
 		OAuth: work.OAuth{
 			Callback: conf.WeCom.OAuthCallback, // 内部应用的app oauth url
 			Scopes:   []string{"snsapi_base"},
+		},
+		Log: work.Log{
+			Driver: &drivers.DummyLogger{},
+			Level:  "debug",
+			//Level: "off",
+			File: "./wechat.log",
 		},
 		Cache:     cache,
 		HttpDebug: true,
