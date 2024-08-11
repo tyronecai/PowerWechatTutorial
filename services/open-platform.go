@@ -32,6 +32,9 @@ func NewOpenPlatformAppService(conf *config.Configuration) (*openPlatform.OpenPl
 		Cache:     cache,
 		HttpDebug: true,
 		Debug:     false,
+		Http: openPlatform.Http{
+			Timeout: 30,
+		},
 		//"sandbox": true,
 	})
 

@@ -31,8 +31,8 @@ func CallbackVerify(c *gin.Context) {
 // 回调配置
 // https://work.weixin.qq.com/api/doc/90000/90135/90930
 func CallbackNotify(c *gin.Context) {
-	//requestXML, _ := ioutil.ReadAll(c.Request.Body)
-	//c.Request.Body = ioutil.NopCloser(bytes.NewBuffer(requestXML))
+	//requestXML, _ := io.ReadAll(c.Request.Body)
+	//c.Request.Body = io.NopCloser(bytes.NewBuffer(requestXML))
 	//println(string(requestXML))
 
 	rs, err := services.MiniProgramApp.Server.Notify(c.Request, func(event contract.EventInterface) interface{} {
