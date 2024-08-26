@@ -30,7 +30,7 @@ func NewOpenPlatformAppService(conf *config.Configuration) (*openPlatform.OpenPl
 		//	File:  "./wechat.log",
 		//},
 		Cache:     cache,
-		HttpDebug: true,
+		HttpDebug: false,
 		Debug:     false,
 		Http: openPlatform.Http{
 			Timeout: 30,

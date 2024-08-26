@@ -2,8 +2,8 @@ github.com/ArtisanCloud/PowerLibs/v3 v3.2.5 h1:W3NKBTnh4d5RBzondNo++QdZ99HPYs5TQ
 github.com/ArtisanCloud/PowerLibs/v3 v3.2.5/go.mod h1:XFRnJA+D0b0IoeSk2ceZzBp9qxatMHOGtWdZCa/r/3U=
 github.com/ArtisanCloud/PowerSocialite/v3 v3.0.7 h1:P+erNlErr+X2v7Et+yTWaTfIRhw+HfpAPdvNIEwk9Gw=
 github.com/ArtisanCloud/PowerSocialite/v3 v3.0.7/go.mod h1:VZQNCvcK/rldF3QaExiSl1gJEAkyc5/I8RLOd3WFZq4=
-github.com/ArtisanCloud/PowerWeChat/v3 v3.2.27 h1:cXXEoq4Z439lClG2FUgSogABLSjoTPpVL0StOPOMLjY=
-github.com/ArtisanCloud/PowerWeChat/v3 v3.2.27/go.mod h1:mJssuwvXsKmAfT9+YobJsb1V2qHoJOhrLNmEwomFL+0=
+github.com/ArtisanCloud/PowerWeChat/v3 v3.2.39 h1:sq2R+nEaDEwFcLku2bAOq8E18zYktXI9UVHyJrW9S4U=
+github.com/ArtisanCloud/PowerWeChat/v3 v3.2.39/go.mod h1:9CbKc6nODhoM8TVjoXqujrAr7zrTBUlr0Z7daFJVAJI=
 github.com/ArtisanCloud/RobotChat v0.0.0-20230908015013-0e0034f17c6b h1:3Jv1flR5DiY4SDM1uf1Ruvj9IVU/EZDznIVaWajHlr8=
 github.com/ArtisanCloud/RobotChat v0.0.0-20230908015013-0e0034f17c6b/go.mod h1:A06uLqllEm14Yi935xd8am/61nCXYgODGtjZ31+Q6x8=
 github.com/BurntSushi/toml v0.3.1 h1:WXkYYl6Yr3qBf1K79EBnL4mak0OimBfB0XUf9Vl28OQ=
