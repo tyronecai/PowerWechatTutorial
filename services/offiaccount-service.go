@@ -33,7 +33,7 @@ func NewOfficialAccountAppService(conf *config.Configuration) (*officialAccount.
 			File:   "./wechat.log",
 		},
 		Cache:     cache,
-		HttpDebug: true,
+		HttpDebug: false,
 		Debug:     false,
 		//"sandbox": true,
 	})

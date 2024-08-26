@@ -37,7 +37,7 @@ func NewWeComService(conf *config.Configuration) (*work.Work, error) {
 		},
 		Cache:     cache,
 		HttpDebug: true,
-		Debug:     true,
+		Debug:     false,
 	})
 
 	return app, err
@@ -62,7 +62,7 @@ func NewWeComContactService(conf *config.Configuration) (*work.Work, error) {
 			Callback: conf.WeCom.OAuthCallback, // 内部应用的app oauth url
 			Scopes:   nil,
 		},
-		HttpDebug: false,
+		HttpDebug: true,
 		Debug:     false,
 		Cache:     cache,
 	})

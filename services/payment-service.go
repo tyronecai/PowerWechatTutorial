@@ -47,7 +47,7 @@ func NewWXPaymentApp(conf *config.Configuration) (*payment.Payment, error) {
 			BaseURI: "https://api.mch.weixin.qq.com",
 		},
 
-		HttpDebug: true,
+		HttpDebug: false,
 		Debug:     false,
 		//Debug:     true,
 	})
