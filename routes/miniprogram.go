@@ -219,8 +219,8 @@ func InitMiniProgramAPIRoutes(r *gin.Engine) {
 		routerMiniProgram.GET("/virtualPayment/startUploadGoods", miniprogram.APIStartUploadGoods)
 
 		// 消息回调
-		routerMiniProgram.GET("/callback/chat-bot", miniprogram.CallbackVerify)
-		routerMiniProgram.POST("/callback/chat-bot", miniprogram.CallbackNotify)
+		routerMiniProgram.GET("/callback/message", miniprogram.CallbackVerify)
+		routerMiniProgram.POST("/callback/message", miniprogram.CallbackNotify)
 
 		// Handle subscribe chat-bot route
 		routerMiniProgram.GET("/subscribeMessage/addTemplate", miniprogram.APISubscribeMessageAddTemplate)

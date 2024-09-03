@@ -13,7 +13,8 @@ go 1.21
 
 require (
 	github.com/ArtisanCloud/PowerLibs/v3 v3.2.5
-	github.com/ArtisanCloud/PowerWeChat/v3 v3.2.39
+	github.com/ArtisanCloud/PowerWeChat/v3 v3.2.40
+
 	github.com/ArtisanCloud/RobotChat v0.0.0-20230908015013-0e0034f17c6b
 	github.com/gin-contrib/cors v1.4.0
 	github.com/gin-gonic/gin v1.9.1
