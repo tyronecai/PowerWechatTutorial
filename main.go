@@ -64,16 +64,6 @@ func main() {
 		panic(err)
 	}
 
-	services.ChatBotApp, err = services.NewChatBotService(conf.RobotChat.ChatBot)
-	if err != nil || services.ChatBotApp == nil {
-		panic(err)
-	}
-
-	services.ArtBotApp, err = services.NewArtBotService(conf.RobotChat.ArtBot)
-	if err != nil || services.ChatBotApp == nil {
-		panic(err)
-	}
-
 	r := gin.Default()
 
 	// Initialize the routes

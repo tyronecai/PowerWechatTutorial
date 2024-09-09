@@ -87,38 +87,6 @@ func CallbackNotify(c *gin.Context) {
 			}
 		}
 
-		//// 调用GPT3.5模型
-		//req := v1.CreateChatCompletionRequest{
-		//	Model: "gpt-3.5-turbo",
-		//	Messages: []v1.Message{
-		//		{
-		//			Role:    "user",
-		//			Content: "Hello!",
-		//		},
-		//	},
-		//}
-		//result, err := services.RobotChatApp.GPTClient.V1.Chat.CreateChatCompletion(&req)
-		//if err != nil {
-		//	fmt2.Printf("error: %v", err)
-		//	return err.Error()
-		//}
-
-		//return messages.NewText(result.Object)
-		//replyData := messages.NewNews([]*object.HashMap{
-		//	{
-		//		"Title":       "登录授权",
-		//		"Description": "点此信息登录系统",
-		//		"PicUrl":      "https://file.jhtinfo.net/dedicatedline/temp/4a551a07-df1f-472a-a438-7d41a94f8eb4.png",
-		//		"Url":         "http://www.baidu.com",
-		//	},
-		//	{
-		//		"Title":       "登录授权",
-		//		"Description": "点此信息登录系统",
-		//		"PicUrl":      "https://file.jhtinfo.net/dedicatedline/temp/4a551a07-df1f-472a-a438-7d41a94f8eb4.png",
-		//		"Url":         "http://www.baidu.com",
-		//	},
-		//})
-
 		//return replyData
 		return messages.NewText("ok")
 

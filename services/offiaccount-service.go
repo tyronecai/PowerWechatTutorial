@@ -3,7 +3,6 @@ package services
 import (
 	"github.com/ArtisanCloud/PowerWeChat/v3/src/kernel"
 	"github.com/ArtisanCloud/PowerWeChat/v3/src/officialAccount"
-	"github.com/ArtisanCloud/PowerWeChat/v3/test/testLogDriver"
 	"os"
 	"power-wechat-tutorial/config"
 )
@@ -28,12 +27,13 @@ func NewOfficialAccountAppService(conf *config.Configuration) (*officialAccount.
 		AESKey:       conf.OffiAccount.MessageAesKey,
 		ResponseType: os.Getenv("response_type"),
 		Log: officialAccount.Log{
-			Driver: &testLogDriver.SimpleLogger{},
-			Level:  "debug",
-			File:   "./wechat.log",
+			//Driver: &testLogDriver.SimpleLogger{},
+			Level: "debug",
+			//File:  "./wechat.log",
+			Stdout: false,
 		},
 		Cache:     cache,
-		HttpDebug: false,
+		HttpDebug: true,
 		Debug:     false,
 		//"sandbox": true,
 	})
