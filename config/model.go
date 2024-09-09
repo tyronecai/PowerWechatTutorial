@@ -11,7 +11,6 @@ type Configuration struct {
 	WeCom        WeCom
 	OffiAccount  OffiAccount
 	OpenPlatform OpenPlatform
-	RobotChat    RobotChat
 }
 
 type Payment struct {

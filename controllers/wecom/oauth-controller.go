@@ -67,7 +67,7 @@ func WebAuthorizedUserV2(ctx *gin.Context) {
 		return
 	}
 
-	accessToken, err := services.WeComApp.AccessToken.GetToken(false)
+	accessToken, err := services.WeComApp.AccessToken.GetToken(ctx.Request.Context(), false)
 	if err != nil {
 		ctx.String(http.StatusBadRequest, err.Error())
 		return

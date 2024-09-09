@@ -12,13 +12,13 @@ import (
 
 func APISNSSession(c *gin.Context) {
 
-	//code, exist := c.GetQuery("code")
-	//if !exist {
-	//	panic("parameter code expected")
-	//}
-	//
-	//rs, err := services.MiniProgramApp.Auth.Session(c.Request.Context(), code)
-	//services.MiniProgramApp.AccessToken.Refresh()
+	code, exist := c.GetQuery("code")
+	if !exist {
+		panic("parameter code expected")
+	}
+	rs, err := services.MiniProgramApp.Auth.Session(c.Request.Context(), code)
+	services.MiniProgramApp.AccessToken.Refresh(c.Request.Context())
+	print(rs)
 
 	//{"session_key":"7o91EfeHO4PEnoeVzJxvqw==","openid":"o4QEk5Kc_y8QTrENCpKoxYhS4jkg","unionid":"orLIIs_Tfr0DLoG2iMwSq7RuaYRg"}
 
@@ -27,14 +27,18 @@ func APISNSSession(c *gin.Context) {
 	//openId:="o4QEk5Kc_y8QTrENCpKoxYhS4jkg"
 	//unionId:="orLIIs_Tfr0DLoG2iMwSq7RuaYRg"
 	iv := "JhojkHhkdgqHPkqD9uYZYQ=="
-	rs, err := services.MiniProgramApp.Encryptor.DecryptData(encrypt, sessionKey, iv)
+	rs_e, err_e := services.MiniProgramApp.Encryptor.DecryptData(encrypt, sessionKey, iv)
 	//services.MiniProgramApp.Base.CheckEncryptedData(c.Request.Context())
 
 	if err != nil {
 		panic(err)
 	}
 
-	c.JSON(http.StatusOK, rs)
+	if err_e != nil {
+		panic(err_e)
+	}
+
+	c.JSON(http.StatusOK, rs_e)
 
 }
 

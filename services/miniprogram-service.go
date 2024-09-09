@@ -23,7 +23,8 @@ func NewMiniMiniProgramService(conf *config.Configuration) (*miniProgram.MiniPro
 			//	"47.108.182.200:7001",
 			//	"47.108.182.200:7002",
 			//},
-			//Password: "hello",
+			//Username: "michaelhu",
+			//Password: "111111",
 		})
 	}
 	app, err := miniProgram.NewMiniProgram(&miniProgram.UserConfig{
