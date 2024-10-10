@@ -350,6 +350,7 @@ func InitWecomAPIRoutes(r *gin.Engine) {
 		wecomRouter.POST("corpgroup/corp/list_app_share_info", wecom.APICorpGroupCorpListAppShareInfo)
 		wecomRouter.POST("corpgroup/corp/gettoken", wecom.APICorpGroupCorpGetToken)
 		wecomRouter.POST("miniprogram/transfer_session", wecom.APICorpGroupMiniProgramTransferSession)
+		wecomRouter.POST("miniprogram/code2session", wecom.Code2Session)
 
 		// to be test with permission
 		// Handle msg audit route
