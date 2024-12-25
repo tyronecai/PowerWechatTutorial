@@ -60,6 +60,8 @@ require (
 	github.com/rogpeppe/go-internal v1.8.0 // indirect
 	github.com/twitchyliquid64/golang-asm v0.15.1 // indirect
 	github.com/ugorji/go/codec v1.2.11 // indirect
+	go.opentelemetry.io/otel v1.4.0 // indirect
+	go.opentelemetry.io/otel/trace v1.4.0 // indirect
 	go.uber.org/multierr v1.11.0 // indirect
 	go.uber.org/zap v1.25.0 // indirect
 	golang.org/x/arch v0.3.0 // indirect
